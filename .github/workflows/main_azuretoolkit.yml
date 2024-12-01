@@ -28,6 +28,9 @@ jobs:
       - name: Install WebPack
         run: npm install --save-dev webpack
 
+      - name: Publish to folder
+        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:

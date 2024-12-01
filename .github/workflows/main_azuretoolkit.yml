@@ -25,6 +25,9 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore
 
+      - name: Install WebPack
+        run: npm install --save-dev webpack 
+
       - name: Publish to folder
         run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 

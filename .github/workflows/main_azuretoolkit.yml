@@ -23,8 +23,8 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
 
       - name: Setup webpack
-        run: npm install --save-dev webpack
-
+        run: npm install --global webpack
+        
       - name: Restore NuGet packages
         run: nuget restore
 
